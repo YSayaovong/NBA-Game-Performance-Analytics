@@ -26,7 +26,8 @@ This project uses Python to retrieve, filter, analyze, and visualize NBA game da
 To run this project, install the following Python libraries: pip install pandas requests matplotlib seaborn nba_api
 
 ## Code
-The main code for this project is in nba_analysis.py. It retrieves, cleans, filters, and visualizes NBA data from the 2022-23 season.
+- The main code for this project is in nba_analysis.py. 
+- It retrieves, cleans, filters, and visualizes NBA data from the 2022-23 season.
 
 # How to Run
 Clone this repository: git clone https://github.com/yourusername/NBA-Game-Performance-Analytics.git
