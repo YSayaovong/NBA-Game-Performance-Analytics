@@ -10,16 +10,16 @@ This project uses Python to retrieve, filter, analyze, and visualize NBA game da
 
 1. **Data Retrieval**: We use the `nba_api` to fetch game data for the 2022-23 season.
    - **Screenshot**: Initial data retrieval
-     ![Data Retrieval](images/data_retrieval.png)
+   -  ![Data Retrieval](images/data_retrieval.png)
 
 2. **Data Filtering**: The dataset is filtered to include only official NBA games, excluding All-Star or non-standard games.
    - **Screenshot**: Confirming filtered team names
-     ![Filtered Teams](images/filtered_teams.png)
+   -  ![Filtered Teams](images/filtered_teams.png)
 
 3. **Data Analysis**: We calculate the average points per game for each team.
 4. **Data Visualization**: A bar plot of the top 10 NBA teams by average points is generated.
    - **Screenshot**: Final plot of top 10 NBA teams by average points
-     ![Top 10 NBA Teams](images/top_10_nba_teams.png)
+   -  ![Top 10 NBA Teams](images/top_10_nba_teams.png)
 
 ## Requirements
 
