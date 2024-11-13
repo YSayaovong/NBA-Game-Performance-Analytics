@@ -1,6 +1,6 @@
 # NBA Game Performance and Player Analytics
 
-This project analyzes NBA team performance for the 2022-23 season using data from the NBA API. We identify the top 10 NBA teams by average points scored per game.
+This project analyzes NBA team performance for the 2022-23 season using data from the NBA API. I identify the top 10 NBA teams by average points scored per game.
 
 ## Project Overview
 
