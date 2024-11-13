@@ -8,7 +8,7 @@ This project uses Python to retrieve, filter, analyze, and visualize NBA game da
 
 ## Steps
 
-1. **Data Retrieval**: We use the `nba_api` to fetch game data for the 2022-23 season.
+1. **Data Retrieval**: I use the `nba_api` to fetch game data for the 2022-23 season.
    - **Screenshot**: Initial data retrieval
    -  ![Data Retrieval](images/data_retrieval.png)
 
