@@ -1,6 +1,6 @@
 # NBA Game Performance Analytics
 
-![NBA Analysis Banner](top_10_nba_teams_chart.png)
+![NBA Analysis Banner](images/top_10_nba_teams_chart.png)
 
 ## Overview
 
@@ -18,10 +18,12 @@ Welcome to my **NBA Game Performance Analytics** project! This repository showca
 1. **Data Extraction**:
    - Utilized the NBA API to collect detailed game data from the 2022-2023 season.
    - Ensured real-time relevance and data accuracy for analysis.
+   - ![Data Retrieval Process](images/data_retrieval.png)
 
 2. **Data Cleaning & Transformation**:
    - Handled missing and inconsistent values.
    - Transformed raw data into structured, actionable datasets.
+   - ![Filtered Teams](images/filtered_teams.png)
 
 3. **Performance Analysis**:
    - Ranked teams based on average points scored per game.
@@ -44,10 +46,10 @@ Welcome to my **NBA Game Performance Analytics** project! This repository showca
 ### Team Rankings by Average Points Per Game
 
 #### Chart Representation
-![Top 10 NBA Teams Chart](top_10_nba_teams_chart.png)
+![Top 10 NBA Teams Chart](images/top_10_nba_teams_chart.png)
 
 #### Visual Representation
-![Top 10 NBA Teams](top_10_nba_teams.png)
+![Top 10 NBA Teams](images/top_10_nba_teams.png)
 
 ## Results and Insights
 
