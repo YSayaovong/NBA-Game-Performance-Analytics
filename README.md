@@ -1,79 +1,88 @@
-# NBA Game Performance Analytics
+# NBA Game Performance Analytics | 2022–23 Team Insights
 
-![NBA Analysis Banner](images/top_10_nba_teams_chart.png)
-
-## Overview
-
-Welcome to my **NBA Game Performance Analytics** project! This repository showcases my journey in sports data analytics by analyzing team performance during the 2022-2023 NBA season. By leveraging Python, APIs, and data visualization, I derived meaningful insights into team dynamics and game performance.
-
-## Objectives
-
-- Extract real-time game data from the **NBA API**.
-- Process and clean the data to ensure accuracy and consistency.
-- Analyze team performance metrics, with a focus on average points scored per game.
-- Visualize findings to provide actionable insights into NBA team performance.
-
-## Key Accomplishments
-
-1. **Data Extraction**:
-   - Utilized the NBA API to collect detailed game data from the 2022-2023 season.
-   - Ensured real-time relevance and data accuracy for analysis.
-   - ![Data Retrieval Process](images/data_retrieval.png)
-
-2. **Data Cleaning & Transformation**:
-   - Handled missing and inconsistent values.
-   - Transformed raw data into structured, actionable datasets.
-   - ![Filtered Teams](images/filtered_teams.png)
-
-3. **Performance Analysis**:
-   - Ranked teams based on average points scored per game.
-   - Identified the top 10 teams with standout offensive performances.
-
-4. **Visualization**:
-   - Designed clear, visually appealing graphs to represent team performance metrics.
-   - Focused on making insights accessible to both technical and non-technical audiences.
-
-## Skills Demonstrated
-
-- **Programming**: Python
-- **Data Analysis Libraries**: Pandas, NumPy
-- **Visualization Tools**: Matplotlib, Seaborn
-- **APIs**: NBA API
-- **Data Wrangling**: Cleaning, Transforming, and Structuring Data
-
-## Example Visualizations
-
-### Team Rankings by Average Points Per Game
-
-#### Chart Representation
-![Top 10 NBA Teams Chart](images/top_10_nba_teams_chart.png)
-
-#### Visual Representation
-![Top 10 NBA Teams](images/top_10_nba_teams.png)
-
-## Results and Insights
-
-- The top-performing teams in the 2022-2023 NBA season were identified based on average points per game.
-- Offensive strategies and game dynamics were highlighted through data-driven insights.
-
-## Why Sports Data Analysis?
-
-As a passionate follower of sports, I am motivated to contribute my skills in data engineering and analysis to the field of sports analytics. This project is a stepping stone towards a career where I can merge my technical expertise with my love for sports to create impactful insights that drive decisions.
-
-My ultimate goal is to work as a **Sports Data Analyst**, contributing to the evolving landscape of sports by combining data-driven insights with strategic decision-making.
-
-## Next Steps
-
-- Expanding this project to include advanced metrics such as player efficiency ratings (PER) and defensive stats.
-- Incorporating machine learning techniques for predictive analysis (e.g., game outcomes, player performance).
-- Collaborating on open-source sports data projects to further enhance my portfolio.
-
-## Connect With Me
-
-- **LinkedIn**: [ysayaovong](https://linkedin.com/in/ysayaovong)
-- **GitHub**: [YSayaovong](https://github.com/YSayaovong)
-- **Email**: [ysayaovong@gmail.com](mailto:ysayaovong@gmail.com)
+## Executive Summary
+Front offices and analysts need fast, reproducible views of what drives wins.  
+This project ingests 2022–23 NBA game data, engineers pace-adjusted ratings (ORtg/DRtg), applies simple strength-of-schedule (SoS) adjustments, and correlates key metrics with win rate to surface actionable takeaways.
 
 ---
 
-Feel free to explore this repository and provide any feedback or suggestions. I'm excited to grow and learn as I continue my journey into sports data analytics!
+## Business Problem
+Teams commonly evaluate by raw points per game, which can be misleading without pace and opponent context. Decision-makers need:
+- Pace-adjusted offensive/defensive efficiency
+- Opponent (SoS) context
+- Clear links between metrics and win %
+
+---
+
+## Methodology
+- **Data Source:** `nba_api` (official NBA stats endpoints via community library)
+- **Ingest:** Team game logs for the 2022–23 season
+- **Transform:** Possessions estimate (pace), ORtg/DRtg, SoS (avg opponent win%), net rating
+- **Analyze:** Correlations (win% vs. ORtg/DRtg/NetRtg/TO%), top/bottom quintiles
+- **Visualize:** Ranked bar charts and scatter plots saved to `/outputs/figures/`
+
+---
+
+## Skills
+- Python (pandas, numpy, matplotlib), API ingestion (`nba_api`)
+- Feature engineering (pace, ratings), correlation analysis
+- Reproducible CLI workflow & basic testing
+
+---
+
+## Results & Business Recommendation
+- **ORtg and DRtg are the clearest win-rate drivers** (expected: efficiency > raw PPG).  
+- **Turnovers and defensive rebounds** appear frequently among top contributors—prioritize **ball security** and **defensive glass** to convert close games.  
+- Teams with **top-quartile NetRtg** and **median turnover rates** left wins on the table—target late-game TO reduction.
+
+> Notes: Ratings are regular-season only; model-free correlations shown. Extend with play-by-play for deeper situational analysis.
+
+---
+
+## How to Run
+```bash
+# 1) Setup
+python -m venv .venv && . .venv/Scripts/activate   # on Windows
+pip install -r requirements.txt
+
+# 2) Run end-to-end (defaults to 2022-23)
+python src/run_analysis.py --season "2022-23"
+
+# 3) Outputs
+# - ./data/raw/*.json
+# - ./data/processed/team_metrics.parquet
+# - ./outputs/figures/*.png
+```
+> macOS/Linux activation: `source .venv/bin/activate`
+
+---
+
+## Project Structure
+```
+NBA-Game-Performance-Analytics/
+├─ README.md
+├─ requirements.txt
+├─ .gitignore
+├─ src/
+│  ├─ ingest.py
+│  ├─ transform.py
+│  ├─ analyze.py
+│  └─ run_analysis.py
+├─ tests/
+│  └─ test_transform.py
+├─ data/               # (gitignored)
+│  ├─ raw/
+│  └─ processed/
+└─ outputs/
+   └─ figures/
+```
+
+---
+
+## Next Steps
+- Add opponent-adjusted **Four Factors** breakdown by quarter/clutch time
+- Ship a **Streamlit** mini-app for “team picker → keys to win”
+- Add unit tests for possession calc and join keys
+
+## About
+Analyzing NBA team performance for 2022–23 using pace-adjusted ratings and simple SoS context; reproducible, CLI-first workflow.
